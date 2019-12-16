@@ -1,0 +1,36 @@
+<h2>Cargar Vehiculo:</h2>
+<br>
+<form #formcargaVehiculo = "ngForm">
+
+   
+    Marca:
+    <br>
+    
+    <!--
+    <select class="browser-default custom-select" [(ngModel)]= marca name = "marca" (change) = cargarModelos($event) >
+        <option *ngFor="let m of marcas" [ngValue]='marca'   >{{m}}</option>
+    </select>
+        -->
+        <select (change)="filterChanged($event.target.value)">
+            <option *ngFor="let type of filterTypes" [value]="type.value">{{type.display}}
+            </option>
+            </select>
+
+        <br>
+    Modelo:
+    <br>
+    <select >
+        <option *ngFor="let m of modelos" [value]="modelo">{{m}}
+        </option>
+        </select>
+
+    <br>
+    <!--
+    <select class="browser-default custom-select" [(ngModel)]= 'unAuto.modelo'   name ="modelo" >
+        <option *ngFor="let m of modelos" [ngValue]='unAuto.modelo'>{{m}}</option>
+    </select>
+    -->
+
+</form>
+
+<br>
